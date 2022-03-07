@@ -1,4 +1,5 @@
 # supermall
+About the primary project of trying to understand Vue, the homepage and shopping interface of a simple shopping page
 
 ## Project setup
 ```
@@ -25,5 +26,3 @@ npm run test
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
