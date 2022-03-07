@@ -5,8 +5,7 @@
     @click="itemClick"
     v-if="Object.keys(goodsItem).length !== 0"
   >
-    <!-- 图片懒加载 -->
-    <img v-lazy="showImage" @load="imgLoad" alt="" />
+    <img :src="goodsItem.show.img" alt="" />
     <div class="goods-info">
       <p>{{ goodsItem.title }}</p>
       <span class="price">{{ goodsItem.price }}</span>

@@ -5,18 +5,7 @@
     <recommend-view :recommends="recommends"/>
     <feature-view/>
     <tab-control :titles="['流行', '新款', '精选']"/>
-    <ul>
-      <li>1</li>
-      <li>1</li>
-      <li>1</li>
-      <li>1</li>
-      <li>1</li>
-      <li>1</li>
-      <li>1</li>
-      <li>1</li>
-      <li>1</li>
-      <li>1</li>
-    </ul>
+    <goods-list :goods="showGoodsList" />
   </div>
 </template>
 
@@ -28,6 +17,7 @@ import FeatureView from './childComps/FeatureView'
 
 import NavBar from '@/components/common/navbar/NavBar'
 import TabControl from '@/components/content/tabControl/TabControl'
+import GoodsList from "components/content/goods/GoodsList";
 
 import {getHomeMultidata, getHomeGoods} from "network/home";
 
@@ -43,7 +33,8 @@ import {getHomeMultidata, getHomeGoods} from "network/home";
       RecommendView,
       FeatureView,
       NavBar,
-      TabControl
+      TabControl,
+      GoodsList
     },
     data() {
       return {
@@ -53,9 +44,16 @@ import {getHomeMultidata, getHomeGoods} from "network/home";
           pop: { page: 0, list: [] },
           new: { page: 0, list: [] },
           sell: { page: 0, list: [] },
-        }
+        },
+        currentType: "pop",  // 默认展示商品种类
       }
     },
+  computed: {
+    // 计算展示商品列表
+    showGoodsList() {
+      return this.goods[this.currentType].list;
+    },
+  },
     created() {
     // 请求轮播数据
       this._getHomeMultidata();
