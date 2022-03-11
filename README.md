@@ -1,5 +1,5 @@
 # supermall
-About the primary project of trying to understand Vue, the homepage and shopping interface of a simple shopping page
+About the primary project of trying to understand Vue, the homepage of a simple shopping page
 
 ## Project setup
 ```
